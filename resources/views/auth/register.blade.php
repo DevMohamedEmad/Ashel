@@ -62,10 +62,15 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="number" class="form-control" name="role" required autocomplete="new-password">
+                                <input id="role" type="text" class="form-control @error('name') is-invalid @enderror" name="role" required>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
